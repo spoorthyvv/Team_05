@@ -1,0 +1,73 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,j,k,l,m,f=0,a[20][20],v,h=0,d=0;
+    printf("Enter the size of the matrix\n");
+    scanf("%d",&m);
+    printf("Enter the elements of matrix\n");
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    i=0;
+    j=0;
+    k=m;
+    l=m;
+    v=m*2;
+    printf("Spiral Matrix is\n");
+    while(v)
+    {
+        v--;
+    if(f==0)
+    {
+    for(j=j;j<l;j++)
+    {
+    printf("%d ",a[i][j]);
+    }
+    f=1;
+    i=i+1;
+    j--;
+    }
+    else if(f==1)
+    {
+    for(i=i;i<k;i++)
+    {
+    printf("%d ",a[i][j]);
+    }
+    f=2;
+    i--;
+    j--;
+    }
+    else if(f==2)
+    {
+       
+    for(j=j;j>=0+d;j--)
+    {
+    printf("%d ",a[i][j]);
+    }
+    d++;
+    f=3;
+    i=i-1;
+        j=d-1;
+       
+    }
+    else if(f==3)
+    {
+    k=k-1;
+        h++;
+    for(i=i;i>=0+h;i--)
+    {
+    printf("%d ",a[i][j]);
+    }
+    f=0;
+    j=j+1;
+    i=i+1;
+    l=l-1;
+    }
+    }
+    return 0;
+}
